@@ -1,2 +1,2 @@
 # Mission-to-Mars
-Webscraping and data storage with MongoDB of Mars data
+Web scraping and data storage with MongoDB of Mars data

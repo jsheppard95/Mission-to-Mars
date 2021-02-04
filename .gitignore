@@ -1,3 +1,10 @@
+# Practice Files
+Practice.ipynb
+index.html
+
+# MacOS Stuff
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

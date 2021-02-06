@@ -146,7 +146,7 @@ def mars_facts():
         return None
 
     # Assign columns and set index of dataframe
-    df.columns = ["Description", "Value"]
+    df.columns = ["Description", "Mars"]
     df.set_index("Description", inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap

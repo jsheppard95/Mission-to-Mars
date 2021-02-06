@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup as soup
 import pandas as pd
 import datetime as dt
 
+
 def scrape_all():
     """
     scrape_all
@@ -42,6 +43,7 @@ def scrape_all():
     # Stop the webdriver and return data
     browser.quit()
     return data
+
 
 def mars_news(browser):
     """
@@ -85,6 +87,7 @@ def mars_news(browser):
 
     return news_title, news_p
 
+
 def featured_image(browser):
     """
     featured_image
@@ -124,6 +127,7 @@ def featured_image(browser):
 
     return img_url
 
+
 def mars_facts():
     """
     mars_facts
@@ -132,7 +136,7 @@ def mars_facts():
     Parameters:
     -----------
     None
-    
+
     Returns:
     --------
     df.to_html() : str
@@ -151,6 +155,7 @@ def mars_facts():
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html()
+
 
 def hemisphere_images(browser):
     # Visit the URL
@@ -185,21 +190,23 @@ def hemisphere_images(browser):
 
             html = browser.html
             img_soup = soup(html, "html.parser")
-            
+
             # Find "Download" box
             download_soup = img_soup.find("div", class_="downloads")
             # Extract link to "Sample"
             img_url = download_soup.find("li").find("a").attrs["href"]
-            
-            # Store image URL and title in single-hemisphere dictionary and append dict to full list
+
+            # Store image URL and title in single-hemisphere dictionary and
+            # append dict to full list
             hemispheres["img_url"] = img_url
             hemispheres["title"] = title
             hemisphere_image_urls.append(hemispheres)
     except BaseException:
         return None
-    
+
     # Return hemispher_image_urls dictionary
     return hemisphere_image_urls
+
 
 if __name__ == "__main__":
     # If running as a script, print scraped data

@@ -23,6 +23,7 @@ def scrape_all():
         news_paragraph: NASA Mars most recent article description
         featured_image: JPL Mars most recent image
         facts: spacefacts table of Mars facts
+        hemispheres: Mars hemisphere image URLs and titles
         last_modified: acquisition time
     """
     # Initiate headless driver
@@ -158,6 +159,21 @@ def mars_facts():
 
 
 def hemisphere_images(browser):
+    """
+    hemisphere_images
+    Navigates to Mars hemisphere image search page and returns images
+
+    Parameters:
+    -----------
+    browser : splinter.Browser
+        spliter.Browser object instantiated with chromedriver executable_path
+
+    Returns:
+    --------
+    hemisphere_image_urls : list
+        list of dictionaries of format
+        {'img_url': 'img_url_value', 'title': 'title_value'}
+    """
     # Visit the URL
     url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
     url_base = "https://astrogeology.usgs.gov"

@@ -124,7 +124,8 @@ def featured_image(browser):
         return None
 
     # Use the base URL to create an absolute URL
-    img_url = f'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/{img_url_rel}'
+    img_url = (f"https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/"
+               f"{img_url_rel}")
 
     return img_url
 
@@ -175,7 +176,8 @@ def hemisphere_images(browser):
         {'img_url': 'img_url_value', 'title': 'title_value'}
     """
     # Visit the URL
-    url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
+    url = "https://astrogeology.usgs.gov/search/"\
+          "results?q=hemisphere+enhanced&k1=target&v1=Mars"
     url_base = "https://astrogeology.usgs.gov"
     browser.visit(url)
 

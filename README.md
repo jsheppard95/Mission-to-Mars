@@ -18,7 +18,8 @@ using MongoDB, and visualize using the Python flask framework.
     - MongoDB 4.4
 
 ## Usage
-Start MongoDB service using Homebrew (MacOS):
+Manage MongoDB service using Homebrew:
+
 Show service status:
 ```
 $ brew services list
@@ -29,12 +30,6 @@ Start MongoDB service:
 ```
 $ brew services start mongodb-community
 ==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-community)
-```
-Stop MongoDB service:
-```
-$ brew services stop mongodb-community
-Stopping `mongodb-community`... (might take a while)
-==> Successfully stopped `mongodb-community` (label: homebrew.mxcl.mongodb-community)
 ```
 Launch Mars webscraping app:
 ```
@@ -49,4 +44,12 @@ $ python app.py
 ```
 Launch browser to the hostname shown and select "Scape New Data" to acquire
 Mars data:
+
 ![Mission to Mars](Resources/Mission_to_Mars.png)
+
+Use `CTRL+C` to quit the application and stop the MongoDB service using:
+```
+$ brew services stop mongodb-community
+Stopping `mongodb-community`... (might take a while)
+==> Successfully stopped `mongodb-community` (label: homebrew.mxcl.mongodb-community)
+```

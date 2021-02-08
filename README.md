@@ -1,6 +1,6 @@
 # Mission-to-Mars
-Jupyter Notebook and Python script to scrape Mars data from web sources, store
-using MongoDB, and visualize using the Python flask framework.
+Jupyter Notebook and Python scripts to scrape Mars data from web sources, store
+using MongoDB, and visualize using the Python Flask framework.
 
 ## Resources
 - Data Source:
@@ -31,7 +31,7 @@ Start MongoDB service:
 $ brew services start mongodb-community
 ==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-community)
 ```
-Launch Mars webscraping app:
+Launch Mars webscraping application:
 ```
 $ python app.py
  * Serving Flask app "app" (lazy loading)
@@ -47,7 +47,8 @@ Mars data:
 
 ![Mission to Mars](Resources/Mission_to_Mars.png)
 
-Use `CTRL+C` to quit the application and stop the MongoDB service using:
+Use `CTRL+C` to quit the application and stop the MongoDB service with the
+following command:
 ```
 $ brew services stop mongodb-community
 Stopping `mongodb-community`... (might take a while)

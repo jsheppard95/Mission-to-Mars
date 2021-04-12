@@ -109,8 +109,8 @@ def featured_image(browser):
     browser.visit(url)
 
     # Find and click the full image button
-    # find_by_tag returns list with 2 elements, 2nd -> 'FULL IMAGE'
-    full_image_elem = browser.find_by_tag('button')[1]
+    # find_by_tag returns list with 2 elements, 2nd -> "FULL IMAGE"
+    full_image_elem = browser.find_by_tag("button")[1]
     full_image_elem.click()
 
     # Parse the resulting html with soup
@@ -197,7 +197,7 @@ def hemisphere_images(browser):
         for link in img_links:
             hemispheres = {}
             entry_desc = link.find("div", class_="description")
-            image_page = entry_desc.find("a", class_="itemLink product-item")
+            image_page = entry_desc.find('a', class_="itemLink product-item")
             # Extract title
             title = image_page.get_text()
 
@@ -212,7 +212,7 @@ def hemisphere_images(browser):
             # Find "Download" box
             download_soup = img_soup.find("div", class_="downloads")
             # Extract link to "Sample"
-            img_url = download_soup.find("li").find("a").attrs["href"]
+            img_url = download_soup.find("li").find('a').attrs["href"]
 
             # Store image URL and title in single-hemisphere dictionary and
             # append dict to full list
